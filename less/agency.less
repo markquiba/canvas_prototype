@@ -65,16 +65,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
     .button-variant(white; @theme-primary; @theme-primary);
-    .heading-font;
+    .theme-font;
     font-weight: 700;
 }
 
 .btn-xl {
     .button-variant(white; @theme-primary; @theme-primary);
-    .heading-font;
-    font-weight: 700;
-    border-radius: 3px;
-    font-size: 18px;
+    .theme-font;
+    font-weight: 600;
+    border-style: none;
+    border-radius: 100px;
+    font-size: 17px;
     padding: 20px 40px;
 }
 
@@ -166,8 +167,16 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+#color-overlay{
+    position: absolute;
+    background: rgba(0,0,0,0.63);
+    height: 100%;
+    width: 100%;
+}
+
 header {
-    background-image: url('../img/header-bg.jpg');
+    height: 100%;
+    background-image: url('../img/assets/header-bg.jpg');s
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -175,20 +184,26 @@ header {
     text-align: center;
     color: white;
     .intro-text {
-        padding-top: 100px;
+        position: relative;
+        z-index: 10;
+        text-align: left;
+        padding-top: 20px;
         padding-bottom: 50px;
-        .intro-lead-in {
+        /*.intro-lead-in {
             .serif-font;
             font-style: italic;
             font-size: 22px;
             line-height: 22px;
             margin-bottom: 25px;
-        }
+        }*/
         .intro-heading {
-            .heading-font;
-            font-weight: 700;
-            font-size: 50px;
-            line-height: 50px;
+            .brand-color{
+                color: @theme-primary;
+            }
+            .theme-font;
+            font-weight: 450;
+            font-size: 48px;
+            line-height: 80px;
             margin-bottom: 25px;
         }
     }
@@ -197,20 +212,25 @@ header {
 @media(min-width:768px) {
     header {
         .intro-text {
-            padding-top: 300px;
+            position: relative;
+            z-index: 10;
+            padding-top: 275px;
             padding-bottom: 200px;
-            .intro-lead-in {
+            /*.intro-lead-in {
                 .serif-font;
                 font-style: italic;
                 font-size: 40px;
                 line-height: 40px;
                 margin-bottom: 25px;
-            }
+            }*/
             .intro-heading {
-                .heading-font;
-                font-weight: 700;
-                font-size: 75px;
-                line-height: 75px;
+                .brand-color{
+                    color: @theme-primary;
+                }
+                .theme-font;
+                font-weight: 450;
+                font-size: 48px;
+                line-height: 80px;
                 margin-bottom: 50px;
             }
         }
@@ -528,7 +548,7 @@ section {
 
 aside.clients {
     img {
-        margin: 50px auto;
+        margin: 20px auto;
     }
 }
 
